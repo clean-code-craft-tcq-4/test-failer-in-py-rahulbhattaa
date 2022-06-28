@@ -5,7 +5,7 @@ color_code_dictionary = {}
 
 def get_index_numbers(i,j):
     return f'{i * 5 + j + 1}'
-
+ 
 def get_major_color(index_no):
     if(index_no in color_code_dictionary):
         return color_code_dictionary[index_no][0]
