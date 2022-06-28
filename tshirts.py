@@ -15,4 +15,4 @@ def test_tshirt_size():
 
 
 test_tshirt_size()
-print("All is well\n")
+print("All is well")
