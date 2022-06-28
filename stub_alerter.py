@@ -12,3 +12,4 @@ def network_alert_stub(celcius, network_func):
       return 200
     else:
       return 500
+ 
