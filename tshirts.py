@@ -6,7 +6,7 @@ def size(cms):
         return 'M'
     else:
         return 'L'
-
+ 
 def test_tshirt_size():
     assert(size(37) == 'S')
     assert(size(40) == 'M')
