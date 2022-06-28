@@ -5,7 +5,7 @@ alert_failure_count = 0
 def convert_farenheit_to_celcius(farenheit):
     celcius = (farenheit - 32) * 5 / 9
     return celcius
-    
+     
 def alert_in_celcius(farenheit,network_status):
     celcius = convert_farenheit_to_celcius(farenheit)
     returnCode = stub_alerter.network_alert_stub(celcius,network_status)
