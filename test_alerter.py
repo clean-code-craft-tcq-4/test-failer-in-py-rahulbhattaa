@@ -10,6 +10,6 @@ def test_alerter():
   alerter.alert_in_celcius(100,stub_alerter.network_ok)
   assert(alerter.alert_failure_count == 2)
   
-if __name__ == '__main__':
+if __name__ == '__main__': 
   test_alerter()
   print('All is well')
