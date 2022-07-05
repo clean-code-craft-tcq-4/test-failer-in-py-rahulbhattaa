@@ -1,63 +1,32 @@
 
 major_colors = ["White", "Red", "Black", "Yellow", "Violet"]
 minor_colors = ["Blue", "Orange", "Green", "Brown", "Slate"]
-color_code_dictionary = {}
+color_code_manual=[]
 
-def get_index_numbers(i,j):
-    return f'{i * 5 + j + 1}'
- 
-def get_major_color(index_no):
-    if(index_no in color_code_dictionary):
-        return color_code_dictionary[index_no][0]
-    else:
-        return "Index number not available"
+def get_pair_no_from_colors(major_color,minor_color):
+    major_index = major_colors.index(major_color)
+    minor_index = minor_colors.index(minor_color)
+    return major_index * len(minor_colors) + minor_index + 1
 
-def get_minor_color(index_no):
-    if(index_no in color_code_dictionary):
-        return color_code_dictionary[index_no][1]
-    else:
-        return "Index number not available"
 
-def get_max_len():
-    color_code_list = list(color_code_dictionary) + major_colors + minor_colors
-    return len(max(color_code_list,key = len)) 
+def print_color_map(major_colors,minor_colors):   
+    for i, major_col in enumerate(major_colors):
+        for j, minor_col in enumerate(minor_colors):
+         color_code_manual.append([i * 5 + j + 1 ,major_col,minor_col])   
+    return color_code_manual
 
-def format_color_Code(index_no,seperator):
-    if(index_no in color_code_dictionary):
-        major_color = get_major_color(index_no)
-        minor_color = get_minor_color(index_no)
-        longest_str_len = get_max_len()
+def format_color_code_manual(pair_number,major_color,minor_color):
+    return f'{pair_number}|{major_color}|{minor_color}'
 
-        return f"{index_no: <{longest_str_len}} {seperator} {major_color: <{longest_str_len}} {seperator} {minor_color}"
-    else:
-        return "Index number not available"
-
-def print_color_map(seperator):
-    if color_code_dictionary:
-        for index_no in color_code_dictionary:
-            color_code = format_color_Code(index_no,seperator)
-            print(color_code)
-    else:
-        print("Color code manual is empty!!")
-		
-def update_color_code_dictionary():
-    for i, major in enumerate(major_colors):
-        for j, minor in enumerate(minor_colors):
-            index_no = get_index_numbers(i,j)
-            color_code_dictionary[index_no] = [major,minor]
-
+def test_pair_no(major_color,minor_color,expected_pair_no):
+    resultant_pair_no=get_pair_no_from_colors(major_color,minor_color)
+    assert(resultant_pair_no==expected_pair_no)
     
-def test_alignment():
-    assert(get_major_color('20') == 'Yellow')
-    assert(get_minor_color('22') == 'Orange')
-    assert(format_color_Code('1','|')   == '1      | White  | Blue')
-    assert(format_color_Code('6','|')   == '6      | Red    | Blue')
-    assert(format_color_Code('11','|')  == '11     | Black  | Blue')
-    assert(format_color_Code('25',',') == '25     , Violet , Slate')
-    assert(format_color_Code('9','||') == '9      || Red    || Brown')
-    assert(format_color_Code('89','|') == 'Index number not available')
+def test_colors_and_pair_no(major_colors,minor_colors,expected_pair_sequence):
+    resultant_color_code_manual=print_color_map(major_colors,minor_colors)
+    assert (resultant_color_code_manual[24]==expected_pair_sequence)
 
-update_color_code_dictionary()
-print_color_map('|')
-test_alignment()
-print("All is well\n")
+if __name__ == '__main__':
+	test_pair_no("White","Blue",1)
+	test_pair_no("White","Orange",2)
+	test_colors_and_pair_no(major_colors,minor_colors,[25, 'Violet', 'Slate'])
