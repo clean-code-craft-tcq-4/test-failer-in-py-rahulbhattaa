@@ -31,8 +31,9 @@ jobs:
     - name: tshirts fail
       run: bash .github/workflows/expectfail.sh python tshirts.py
     
+    - name: alerter fail
+      run: bash .github/workflows/expectfail.sh python alerter.py
+      
     - name: misaligned fail
       run: bash .github/workflows/expectfail.sh python misaligned.py
 
-    - name: alerter fail
-      run: bash .github/workflows/expectfail.sh python alerter.py
