@@ -14,3 +14,7 @@ def print_color_map(major_colors,minor_colors):
         for j, minor_col in enumerate(minor_colors):
          color_code_manual.append([i * 5 + j + 1 ,major_col,minor_col])   
     return color_code_manual
+
+
+def format_color_code_manual(pair_number,major_color,minor_color):
+    return f'{pair_number}|{major_color}|{minor_color}'
