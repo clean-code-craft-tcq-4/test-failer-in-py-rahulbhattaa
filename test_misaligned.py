@@ -1,0 +1,17 @@
+import misaligned
+
+def format_color_code_manual(pair_number,major_color,minor_color):
+    return f'{pair_number}|{major_color}|{minor_color}'
+
+def test_pair_no(major_color,minor_color,expected_pair_no):
+    resultant_pair_no=misaligned.get_pair_no_from_colors(major_color,minor_color)
+    assert(resultant_pair_no==expected_pair_no)
+    
+def test_colors_and_pair_no(major_colors,minor_colors,expected_pair_sequence):
+    resultant_color_code_manual=misaligned.print_color_map(major_colors,minor_colors)
+    assert (resultant_color_code_manual[24]==expected_pair_sequence)
+
+if __name__ == '__main__':
+    test_pair_no("White","Blue",1)
+    test_pair_no("White","Orange",2)
+    test_colors_and_pair_no(major_colors,minor_colors,[25, 'Violet', 'Slate'])
