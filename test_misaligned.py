@@ -1,5 +1,6 @@
 import misaligned
-
+major_colors = ["White", "Red", "Black", "Yellow", "Violet"]  
+minor_colors = ["Blue", "Orange", "Green", "Brown", "Slate"]
 def format_color_code_manual(pair_number,major_color,minor_color):
     return f'{pair_number}|{major_color}|{minor_color}'
 
