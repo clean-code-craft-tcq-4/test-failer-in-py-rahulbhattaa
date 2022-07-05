@@ -1,5 +1,5 @@
 alert_failure_count = 0
-threshold_value=180
+threshold_value=100
 
 def network_alert_stub(celcius):
     print(f'ALERT: Temperature is {celcius} celcius')
@@ -27,5 +27,5 @@ def alert_in_celcius(farenheit):
 alert_in_celcius(400.5)
 alert_in_celcius(303.6)
 print(f'{alert_failure_count} alerts failed.')
-assert(alert_failure_count==1)
+assert(alert_failure_count==2)
 print('All is well (maybe!)')
