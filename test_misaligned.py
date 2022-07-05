@@ -1,8 +1,7 @@
 import misaligned
 major_colors = ["White", "Red", "Black", "Yellow", "Violet"]  
 minor_colors = ["Blue", "Orange", "Green", "Brown", "Slate"]
-def format_color_code_manual(pair_number,major_color,minor_color):
-    return f'{pair_number}|{major_color}|{minor_color}'
+
 
 def test_pair_no(major_color,minor_color,expected_pair_no):
     resultant_pair_no=misaligned.get_pair_no_from_colors(major_color,minor_color)
