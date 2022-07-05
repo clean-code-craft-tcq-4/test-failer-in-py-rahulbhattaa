@@ -27,6 +27,6 @@ def test_colors_and_pair_no(major_colors,minor_colors,expected_pair_sequence):
     assert (resultant_color_code_manual[24]==expected_pair_sequence)
 
 if __name__ == '__main__':
-	test_pair_no("White","Blue",1)
-	test_pair_no("White","Orange",2)
-	test_colors_and_pair_no(major_colors,minor_colors,[25, 'Violet', 'Slate'])
+    test_pair_no("White","Blue",1)
+    test_pair_no("White","Orange",2)
+    test_colors_and_pair_no(major_colors,minor_colors,[25, 'Violet', 'Slate'])
