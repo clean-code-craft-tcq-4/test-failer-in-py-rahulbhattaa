@@ -6,7 +6,7 @@ def size(cms):
         return 'M'
     elif cms>=42 and cms<=45:
         return 'L'
-    else cms >= 45 and cms <= 48:
+    elif cms >= 45 and cms <= 48:
         return 'XL'
     else:
         return "Invalid size"
